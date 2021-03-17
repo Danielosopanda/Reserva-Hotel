@@ -1,0 +1,1 @@
+NOTA: Ver en pantalla commpleta.
