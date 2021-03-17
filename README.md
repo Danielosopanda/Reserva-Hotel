@@ -1,1 +1,1 @@
-NOTA: Ver en pantalla commpleta.
+NOTA: Ver en pantalla completa.
