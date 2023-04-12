@@ -90,7 +90,7 @@ formulario.addEventListener("submit", (e) => {
 
             container.style.filter = "blur(4px)";
             successCard.style.visibility = "visible";
-            
+            /* e.preventDefault(); */
     } else {
         e.preventDefault();
     }
