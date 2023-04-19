@@ -107,13 +107,20 @@ body::after{
     border-radius: var(--radioBorde);
 }
 
+
+
 .seccion{
     width: 100%;
 }
 
-.form{
+.form {
     width: 75%;
     margin: 12px auto;
+}
+
+.form--login {
+    width: 30vw;
+    height: 300px;
 }
 
 label{

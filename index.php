@@ -1,5 +1,17 @@
 <?php 
     require_once "conexion.php";
+
+    if(isset($_POST['btn'])) {
+        $correo = $_POST['correo'];
+        $password = $_POST['password'];
+
+        // Buscar administrador donde el correo sea igual a userAdmin y password igual a passwordAdmin
+        $consulta = ""; // AND MD5(password) = passwordAdmin;
+        $usuarioEncontrado = $conexion->query($consulta);
+
+        // Si el número de columnas = 1, te manda a formulario.php ($usuarioEncontrado->num_rows == 1)
+
+    }
 ?>
 
 <!DOCTYPE html>
@@ -15,9 +27,17 @@
 </head>
 <body>
     <div class="container">
-        <div class="main sombra">
-            
-        </div>
+        <form class="main form form--login sombra" action="#" method="POST">
+            <div class="form__field">
+                <label for="" class="form__label">Correo</label>
+                <input type="text" class="form__input" name="correo">
+            </div>
+            <div class="form__field">
+                <label for="" class="form__label">Contraseña</label>
+                <input type="password" class="form__input" name="password">
+            </div>
+            <button type="submit" name="btn">Iniciar sesión</button>
+        </form>
     </div>
 </body>
 </html>
