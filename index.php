@@ -10,7 +10,7 @@
         $usuarioEncontrado = $conexion->query($consulta);
 
         // Si el número de columnas = 1, te manda a formulario.php ($usuarioEncontrado->num_rows == 1)
-
+        // Prueba
     }
 ?>
 
