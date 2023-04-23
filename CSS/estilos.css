@@ -3,6 +3,7 @@
     --colorPrincipalClaro: #FFE0B2;
     --colorPrincipalOscuro: #F57C00;
     --colorSecundario: #03A9F4;
+    --colorSecundarioHover: #29b5f6;
 
     --colorLetraPrincipal: #212121;
     --colorLetraSecundaria: #757575;
@@ -119,8 +120,15 @@ body::after{
 }
 
 .form--login {
-    width: 30vw;
-    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25vw;
+    height: 17rem;
+}
+
+.form__btn {
+
 }
 
 label{
@@ -308,6 +316,15 @@ input:focus{
     font-size: 15px;
     color: #fafafa;
     letter-spacing: 1px;
+    transition: 200ms ease background;
+}
+
+.btnForm--login {
+    width: 100%;
+}
+
+.btnForm:hover {
+    background: var(--colorSecundarioHover);
 }
 
 .sombra{

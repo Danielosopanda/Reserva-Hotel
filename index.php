@@ -28,6 +28,7 @@
 <body>
     <div class="container">
         <form class="main form form--login sombra" action="#" method="POST">
+            <h2 class="tituloForm">Iniciar sesión</h2>
             <div class="form__field">
                 <label for="" class="form__label">Correo</label>
                 <input type="text" class="form__input" name="correo">
@@ -36,7 +37,7 @@
                 <label for="" class="form__label">Contraseña</label>
                 <input type="password" class="form__input" name="password">
             </div>
-            <button type="submit" name="btn">Iniciar sesión</button>
+            <button class="btnForm btnForm--login" type="submit" name="btn">Iniciar sesión</button>
         </form>
     </div>
 </body>
