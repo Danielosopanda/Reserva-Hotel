@@ -46,7 +46,7 @@
             <div class="header seccion">
                 <img class="logoHotel sombra" src="Images/Logo.png" alt="Logo Hotel" draggable="false">
                 <div class="seccionTitulo">
-                    <h1>NOMBRE DEL HOTEL</h1>
+                    <h1>Motel Dos Esferas</h1>
                     <h2>Eslogan</h2>
                 </div>
                 
