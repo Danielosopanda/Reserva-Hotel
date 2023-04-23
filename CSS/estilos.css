@@ -127,10 +127,6 @@ body::after{
     height: 17rem;
 }
 
-.form__btn {
-
-}
-
 label{
     font-size: 13px;
     color: var(--colorLetraSecundaria);
@@ -227,6 +223,10 @@ label{
     font-size: 22px;
 }
 
+.tituloForm--registro {
+    margin-top: 3rem;
+}
+
 input{
     width: 100%;
     outline: none;
@@ -279,11 +279,11 @@ input:focus{
 .inputCorrecto{
     border-bottom: 2px solid var(--colorVerdeCorrecto);
 }
-.inputIncorrecto{
+.inputIncorrecto {
     border-bottom: 2px solid var(--colorRojoIncorrecto);
 }
 
-.habitacion label{
+.habitacion label {
     display: block;
     text-align: center;
     width: 100%;
@@ -291,20 +291,21 @@ input:focus{
     cursor: pointer;
 }
 
-.imgHabitacion{
+.imgHabitacion {
     width: 100%;
     height: 100px;
     border-radius: var(--radioBorde) var(--radioBorde) 0 0;
 }
-.boton{
+
+.boton {
     width: 100%;
     display: flex;
     justify-content: center;
     margin-top: 6px;
 }
 
-.btnForm{
-    width: calc(30% + 8px);
+.btnForm {
+    width: 100%;
     background: var(--colorSecundario);
     margin: 14px auto 8px;
     padding: 8px;

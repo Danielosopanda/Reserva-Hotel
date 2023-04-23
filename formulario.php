@@ -7,23 +7,18 @@
         $name = $_POST['campoNombre'];
         $email = $_POST['campoEmail'];
         $phone = $_POST['campoTelefono'];
-        $checkInDate = $_POST['checkInDate'];
-        $checkOutDate = $_POST['checkOutDate'];
+        $hours = $_POST['horasDeHospedaje'];
         $guestsNum = $_POST['numeroHuespedes'];
-        $rewards = $_POST['programaRecompensas'];
         //$room = $_POST['habitacion'];  
 
-        /*echo $name;
-        echo $email;
-        echo $phone;
-        echo $checkInDate;
-        echo $checkOutDate;
-        echo $guestsNum;
-        echo $rewards;
-        echo $room;*/
+        //echo $room;
 
-        $consultaEnviarDatos = "INSERT INTO User VALUES (NULL, '{$name}', '{$email}', '{$phone}', '{$checkInDate}', '{$checkOutDate}', $guestsNum, $rewards, 1);";
-        $enviarDatos = $conexion->query($consultaEnviarDatos);
+        // If all fields were filled, send the data to the database
+        if ($name != "" && $email != "" && $phone != "" && $hours != "" && $guestsNum != "") {
+            $consultaEnviarDatos = "INSERT INTO User VALUES (NULL, '{$name}', '{$email}', '{$phone}', NOW(), $hours, $guestsNum, 1);";
+            $enviarDatos = $conexion->query($consultaEnviarDatos);
+        }
+
 
     }
 
@@ -54,7 +49,7 @@
     
             <div class="formulario seccion">
                 <form id="form" action="#" class="form" method="POST">
-                    <h2 class="tituloForm">Registro de Huéspedes</h2>
+                    <h2 class="tituloForm tituloForm--registro">Registro de Huéspedes</h2>
     
                     <div class="campo campoNombre">
                         <label class="labelCampo" for="campoNombre">Nombre</label>
@@ -75,34 +70,18 @@
     
                     <div class="campoDoble">
                         <div class="campo">
-                            <label class="labelCampo" for="checkInDate">Fecha de llegada</label>
-                            <input id="checkInDate" type="date" name="checkInDate">
-                        </div>
-                        <div class="campo">
-                            <label class="labelCampo" for="checkOutDate">Fecha de salida</label>
-                            <input id="checkOutDate" type="date" name="checkOutDate">
-                        </div> 
-                    </div>
-    
-                    <div class="campoDoble">
-                        <div class="campo">
                             <label class="labelCampo" for="campoNumeroHuespedes">Número de huéspedes</label>
                             <input id="numeroHuespedes" type="text" name="numeroHuespedes">
                         </div>
-                        <div class="campo">
-                            <label class="labelCampo" for="programaRecompensas">Programa de recompensas</label>
-
-                            <div class="seccionRecompensas">
-                                <div class="opcionSi">
-                                    <input class="radio" type="radio" name="programaRecompensas" id="opcionSi" value="1">
-                                    <label for="opcionSi">Sí</label>
-                                </div>
-                                <div class="opcionNo">
-                                    <input class="radio" type="radio" name="programaRecompensas" id="opcionNo" value="0" checked>
-                                    <label for="opcionNo">No</label> 
-                                </div>
-                            </div>
-                        </div>
+                        <div class="campo campo--select">
+                            <label class="labelCampo" for="horasDeHospedaje">Horas de hospedaje</label>
+                            <select class="select" name="horasDeHospedaje" id="horasDeHospedaje">
+                                <option value="4" class="option">4</option>
+                                <option value="6" class="option">6</option>
+                                <option value="8" class="option">8</option>
+                                <option value="12" class="option">12</option>
+                            </select>
+                        </div> 
                     </div>
     
                     <label class="labelHabitaciones labelCampo" for="">Tipo de habitación</label>
@@ -119,59 +98,10 @@
                             <img name="habitacion" value="3" class="imgHabitacion" id="presidencial" src="Images/Habitacion_Presidencial.jfif" alt="Habitación presidencial" draggable="false">
                             <label class="labelHabitacion" for="presidencial">Presidencial</label>
                         </div>
-                    </div>
-
-
-<!--                     <label class="labelCampo" for="">Método de pago</label>
-                    <div class="seccionTipoPago">
-
-                        <div class="metodoPago">
-                            <input value="efectivo" type="radio" name="tipoPago" id="opcionEfectivo" class="radio">
-                            <label class="efectivo metodoPago" for="opcionEfectivo">
-                                <i class="fas fa-money-bill logoTipoPago logoEfectivo"></i>
-                                <span>Efectivo</span>
-                            </label>
-                        </div>
-
-                        <div class="metodoPago">
-                            <input value="visa" class="radio" type="radio" name="tipoPago" id="opcionVisa">
-                            <label class="visa metodoPago" for="opcionVisa">
-                                <i class="fab fa-cc-visa logoTipoPago logoVisa"></i>
-                                <span>Visa</span>
-                            </label>
-                        </div>
-
-                        <div class="metodoPago">
-                            <input value="mastercard" class="radio" type="radio" name="tipoPago" id="opcionMastercard">
-                            <label for="opcionMastercard" class="mastercard metodoPago">
-                                <i class="fab fa-cc-mastercard logoTipoPago logoMastercard"></i>
-                                <span>Mastercard</span>
-                            </label>
-                        </div>
-
-                        <div class="metodoPago">
-                            <input value="paypal" type="radio" name="tipoPago" id="opcionPaypal" class="radio">
-                            <label for="opcionPaypal" class="paypal metodoPago">
-                                <i class="fab fa-cc-paypal logoTipoPago logoPaypal"></i>
-                                <span>PayPal</span>
-                            </label>
-                        </div>
-
-                        <div class="metodoPago">
-                            <input value="american-express" type="radio" name="tipoPago" id="opcionAmericanExpress" class="radio">
-                            <label for="opcionAmericanExpress" class="americanExpress metodoPago">
-                                <i class="fab fa-cc-amex logoTipoPago logoAmericanExpress"></i>
-                                <span> AmericanExpress</span>
-                            </label>
-                        </div>
-
-                        <div class="metodoPago">
-
-                        </div>
-                    </div> -->
+                    </div>      
 
                     <div class="boton">
-                        <button name="submitBtn" class="sombra btnForm" type="submit">REGISTRAR</button> 
+                        <button name="submitBtn" class="sombra btnForm" type="submit">REGISTRAR HUÉSPED</button> 
                     </div>
                 </form>
             </div>
