@@ -4,21 +4,27 @@
         
     if(isset($_POST['submitBtn'])) {
         
+        //Declaración variables
         $name = $_POST['campoNombre'];
         $email = $_POST['campoEmail'];
         $phone = $_POST['campoTelefono'];
         $hours = $_POST['horasDeHospedaje'];
         $guestsNum = $_POST['numeroHuespedes'];
-        //$room = $_POST['habitacion'];  
+        //$room = $_POST['habitacion'];
 
-        //echo $room;
-
-        // If all fields were filled, send the data to the database
-        if ($name != "" && $email != "" && $phone != "" && $hours != "" && $guestsNum != "") {
-            $consultaEnviarDatos = "INSERT INTO User VALUES (NULL, '{$name}', '{$email}', '{$phone}', NOW(), $hours, $guestsNum, 1);";
-            $enviarDatos = $conexion->query($consultaEnviarDatos);
-        }
-
+        //Inserción de datos
+        $consultaEnviarDatos = "INSERT INTO user VALUES (NULL, '$name', '$email', '$phone', $guestsNum, NOW(), $hours, $room);";
+        $enviarDatos = $conexion->query($consultaEnviarDatos);
+        
+        //Comprobacion de query
+        if ($enviarDatos === TRUE) {
+            echo '<script>alert("Cliente añadido");</script>';
+          } else {
+            echo "Error: ". $consultaEnviarDatos ."<br>".$conexion->error;
+          }
+        
+        //Cerramos conexion
+        $conexion->close();
 
     }
 
@@ -53,25 +59,25 @@
     
                     <div class="campo campoNombre">
                         <label class="labelCampo" for="campoNombre">Nombre</label>
-                        <input id="campoNombre" type="text" name="campoNombre">
+                        <input id="campoNombre" type="text" name="campoNombre" required>
                     </div>
                     
     
                     <div class="campoDoble">
                         <div class="campo">
                             <label class="labelCampo" for="campoEmail">Correo electrónico</label>
-                            <input id="campoEmail" type="text" name="campoEmail">
+                            <input id="campoEmail" type="text" name="campoEmail" required>
                         </div>
                         <div class="campo">
                             <label class="labelCampo" for="campoTelefono">Teléfono</label>
-                            <input id="campoTelefono" type="text" name="campoTelefono">
+                            <input id="campoTelefono" type="number" name="campoTelefono" required>
                         </div>   
                     </div>
     
                     <div class="campoDoble">
                         <div class="campo">
                             <label class="labelCampo" for="campoNumeroHuespedes">Número de huéspedes</label>
-                            <input id="numeroHuespedes" type="text" name="numeroHuespedes">
+                            <input id="numeroHuespedes" type="text" name="numeroHuespedes" required>
                         </div>
                         <div class="campo campo--select">
                             <label class="labelCampo" for="horasDeHospedaje">Horas de hospedaje</label>
