@@ -17,11 +17,11 @@
         $enviarDatos = $conexion->query($consultaEnviarDatos);
         
         //Comprobacion de query
-        if ($enviarDatos === TRUE) {
+        /* if ($enviarDatos === TRUE) {
             echo '<script>alert("Cliente añadido");</script>';
-          } else {
+        } else {
             echo "Error: ". $consultaEnviarDatos ."<br>".$conexion->error;
-          }
+        } */
         
         //Cerramos conexion
         $conexion->close();

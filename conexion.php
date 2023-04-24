@@ -14,15 +14,22 @@
     //Queries necesarios para la base de datos
 
     /*
-    CREATE TABLE user (
-        idUser int PRIMARY KEY AUTO_INCREMENT,
-        nameUser varchar(50) NOT NULL,
-        emailUser varchar(50) NOT NULL,
-        phoneUser varchar(15) NOT NULL,
-        guestNumUser int NOT NULL,
-        checkInDateUser datetime NOT NULL,
-        hours int NOT NULL,
-        roomTypeUser varchar(10) NOT NULL
+    CREATE TABLE User (
+        idUser int NOT NULL AUTO_INCREMENT,
+        nameUser varchar(50),
+        emailUser varchar(200),
+        phoneUser varchar(10),
+        checkInDateUser timestamp NULL DEFAULT NULL,
+        hoursUser int,
+        guestsNumUser int,
+        roomTypeUser int,
+        PRIMARY KEY (idUser)
+    );
+    
+    CREATE TABLE ADMIN (
+        idAdmin INT PRIMARY KEY AUTO_INCREMENT,
+        userAdmin VARCHAR(50),
+        passwordAdmin VARCHAR(500)
     );
     */
 ?>
