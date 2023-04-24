@@ -6,11 +6,18 @@
         $password = $_POST['password'];
 
         // Buscar administrador donde el correo sea igual a userAdmin y password igual a passwordAdmin
-        $consulta = ""; // AND MD5(password) = passwordAdmin;
+        $consulta = "SELECT * FROM admin WHERE userAdmin='$correo' AND passwordAdmin='$password';"; // AND MD5(password) = passwordAdmin;
         $usuarioEncontrado = $conexion->query($consulta);
 
         // Si el número de columnas = 1, te manda a formulario.php ($usuarioEncontrado->num_rows == 1)
-        // Prueba
+        if ($usuarioEncontrado -> num_rows == 1) {
+            header("Location: /reserva-hotel/formulario.php");
+            exit;
+        } else {
+            echo "Datos incorrectos"
+        }
+
+        $conexion->close();
     }
 ?>
 
