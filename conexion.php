@@ -11,7 +11,7 @@
         echo "Conexión con la base de datos.";
     }
 
-    //Queries necesarios para la base de datos
+    // Queries necesarios para la base de datos
 
     /*
     CREATE TABLE User (
