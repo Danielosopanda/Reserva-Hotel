@@ -1,6 +1,12 @@
 <?php 
     require_once "conexion.php";
-    
+
+    $idValue = $_GET['idUser'];
+        
+    $consultaDatos = "SELECT * FROM user WHERE idUser=$idValue;";
+    $reservacionesDetalles = $conexion->query($consultaDatos);
+
+    $conexion->close();
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +23,24 @@
 <body>
     <div class="container">
         <div class="main sombra">
-            
+            <?php 
+                while ($reservacionEspecifica = $reservacionesDetalles->fetch_object()) {
+                    $CheckIn = $reservacionEspecifica->checkInDateUser;
+                    $hours = $reservacionEspecifica->hoursUser;
+                    $checkOut = date('Y-m-d H:i:s', strtotime($CheckIn . ' + ' . $hours . ' hours'));
+            ?>
+                    
+                <p><?php echo $reservacionEspecifica->nameUser;?><p>
+                <p><?php echo $reservacionEspecifica->emailUser;?><p>
+                <p><?php echo $reservacionEspecifica->phoneUser;?><p>
+                <p><?php echo $reservacionEspecifica->checkInDateUser;?><p>
+                <p><?php echo $checkOut;?><p>                
+                <p><?php echo $reservacionEspecifica->guestsNumUser;?><p>
+                <p><?php echo $reservacionEspecifica->roomTypeUser;?><p>
+                <a href="lista-de-reservaciones.php">Atrás</a>
+            <?php
+                }
+            ?>
         </div>
     </div>
 </body>
