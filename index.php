@@ -6,7 +6,7 @@
         $password = $_POST['password'];
 
         // Buscar administrador donde el correo sea igual a userAdmin y password igual a passwordAdmin
-        $consulta = "SELECT * FROM Admin WHERE userAdmin='{$correo}' AND passwordAdmin='{$password}';"; // AND MD5(password) = passwordAdmin;
+        $consulta = "SELECT * FROM Admin WHERE userAdmin='{$correo}' AND passwordAdmin=MD5('{$password}');"; // AND MD5(password) = passwordAdmin;
         $usuarioEncontrado = $conexion->query($consulta);
 
         // Si el número de columnas = 1, te manda a formulario.php ($usuarioEncontrado->num_rows == 1)
