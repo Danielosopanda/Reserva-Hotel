@@ -36,7 +36,17 @@
                 <p><?php echo $reservacionEspecifica->checkInDateUser;?><p>
                 <p><?php echo $checkOut;?><p>                
                 <p><?php echo $reservacionEspecifica->guestsNumUser;?><p>
-                <p><?php echo $reservacionEspecifica->roomTypeUser;?><p>
+                <p><?php 
+                    if ($reservacionEspecifica->roomTypeUser == 1) {
+                        echo "Estándar";
+                    } elseif ($reservacionEspecifica->roomTypeUser == 2) {
+                        echo "Jacuzzi";
+                        
+                    } elseif ($reservacionEspecifica->roomTypeUser == 3) {
+                        echo "Deluxe";
+
+                    }
+                ?><p>
                 <a href="lista-de-reservaciones.php">Atrás</a>
             <?php
                 }
