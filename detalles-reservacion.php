@@ -61,16 +61,25 @@ $conexion->close();
                         </div>
                         <hr class="hr--detalles-reservacion">
                         <div class="dato">
-                            <P class="negritas">Número de huespedes</P>
+                            <P class="negritas">Número de huéspedes</P>
                             <p><?php echo $reservacionEspecifica->guestsNumUser; ?></p>
                         </div>
                         <hr class="hr--detalles-reservacion">
                         <div class="dato">
                             <P class="negritas">Tipo de habitación</P>
-                            <p><?php echo $reservacionEspecifica->roomTypeUser; ?></p>
+                            <p><?php 
+                                if ($reservacionEspecifica->roomTypeUser == 1) {
+                                    echo "Estándar";
+                                } elseif ($reservacionEspecifica->roomTypeUser == 2) {
+                                    echo "Jacuzzi";
+                                    
+                                } elseif ($reservacionEspecifica->roomTypeUser == 3) {
+                                    echo "Deluxe";
+                                }
+                            ?></p>
                         </div>
                         <hr class="hr--detalles-reservacion">
-                        <a class="boton-atras" href="lista-de-reservaciones.php">Atrás</a>
+                        <a class="boton-atras sombra" href="lista-de-reservaciones.php">Atrás</a>
                     </div>
                 </div>
             <?php
