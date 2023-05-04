@@ -388,7 +388,7 @@ input:focus {
 .Titulo--detalles-reservacion {
     font-size: 2rem;
     padding-bottom: 5%;
-    letter-spacing: 2px;
+    letter-spacing: 0px;
 }
 
 .hr--detalles-reservacion {
