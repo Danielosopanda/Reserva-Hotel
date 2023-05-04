@@ -13,7 +13,7 @@
         //$room = $_POST['habitacion'];
 
         //Inserción de datos
-        $consultaEnviarDatos = "INSERT INTO user VALUES (NULL, '$name', '$email', '$phone', $guestsNum, NOW(), $hours, $room);";
+        $consultaEnviarDatos = "INSERT INTO user VALUES (NULL, '$name', '$email', '$phone', NOW(), $hours, $guestsNum, 1);";
         $enviarDatos = $conexion->query($consultaEnviarDatos);
         
         //Comprobacion de query

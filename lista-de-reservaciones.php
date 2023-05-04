@@ -1,7 +1,7 @@
 <?php 
     require_once "conexion.php";
 
-    $queryReservaciones = "SELECT idUser, nameUser, phoneUser, roomTypeUser FROM USER";
+    $queryReservaciones = "SELECT idUser, nameUser, phoneUser, roomTypeUser FROM USER ORDER BY checkInDateUser DESC;";
     $reservaciones = $conexion->query($queryReservaciones);
 
 ?>
