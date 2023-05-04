@@ -3,7 +3,7 @@
 
     $idValue = $_GET['idUser'];
         
-    $consultaDatos = "SELECT * FROM user WHERE idUser=$idValue;";
+    $consultaDatos = "SELECT * FROM User WHERE idUser = $idValue;";
     $reservacionesDetalles = $conexion->query($consultaDatos);
 
     $conexion->close();
@@ -44,7 +44,6 @@
                         
                     } elseif ($reservacionEspecifica->roomTypeUser == 3) {
                         echo "Deluxe";
-
                     }
                 ?><p>
                 <a href="lista-de-reservaciones.php">Atrás</a>
