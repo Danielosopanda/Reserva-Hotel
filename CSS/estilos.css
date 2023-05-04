@@ -1,4 +1,4 @@
-:root{
+:root {
     --colorPrincipal: #FF9800;
     --colorPrincipalClaro: #FFE0B2;
     --colorPrincipalOscuro: #F57C00;
@@ -18,7 +18,8 @@
     --colorVerdeCorrecto: #4BB543;
     --colorRojoIncorrecto: #cc0000;
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -26,13 +27,13 @@
 }
 
 
-body{
+body {
     background: var(--colorFondo);
     color: var(--colorLetraPrincipal);
 }
 
 
-body::after{
+body::after {
     content: "";
     position: fixed;
     top: 0;
@@ -43,12 +44,13 @@ body::after{
     box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
 }
 
-.container{
+.container {
     height: 100vh;
     display: flex;
     align-items: center;
     transition: 50ms ease all;
 }
+
 /* .container{
     filter: blur(2px);
 } */
@@ -90,16 +92,17 @@ body::after{
     border-radius: var(--radioBorde);
 }
 
-.header{
+.header {
     display: flex;
     align-items: center;
 }
-.header .logoHotel{
+
+.header .logoHotel {
     width: calc(25%/2);
     margin-right: 10px;
 }
 
-.main{
+.main {
     width: 55%;
     height: 630px;
     background: #fafafa;
@@ -110,7 +113,7 @@ body::after{
 
 
 
-.seccion{
+.seccion {
     width: 100%;
 }
 
@@ -127,20 +130,22 @@ body::after{
     height: 17rem;
 }
 
-label{
+label {
     font-size: 13px;
     color: var(--colorLetraSecundaria);
 }
-.labelCampo{
+
+.labelCampo {
     position: relative;
     top: 4px;
     left: 0px;
 }
-.campo{
+
+.campo {
     margin-bottom: 10px;
 }
 
-.campoDoble{
+.campoDoble {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
@@ -159,7 +164,7 @@ label{
 }
 
 .logoMastercard {
-    color: #F79E1B; 
+    color: #F79E1B;
 }
 
 .logoPaypal {
@@ -183,7 +188,7 @@ label{
     align-items: center;
 }
 
-.logoTipoPago{
+.logoTipoPago {
     font-size: 36px;
     margin: 0 6px;
     width: 46px;
@@ -195,29 +200,33 @@ label{
     align-items: space-between;
 }
 
-.opcionSi, .opcionNo{
+.opcionSi,
+.opcionNo {
     display: flex;
     align-items: center;
     width: 49%;
     margin-top: 6px;
 }
 
-.opcionSi label, .opcionNo label {
+.opcionSi label,
+.opcionNo label {
     display: inline-block;
     width: calc(100% - 30px);
     font-size: 14px;
 }
-.opcionSi .radio, .opcionNo .radio {
+
+.opcionSi .radio,
+.opcionNo .radio {
     margin-right: 4px;
 }
 
-.radio{
+.radio {
     display: inline-block;
     width: 16px;
 }
 
 
-.tituloForm{
+.tituloForm {
     text-align: center;
     margin-bottom: 8px;
     font-size: 22px;
@@ -227,7 +236,7 @@ label{
     margin-top: 3rem;
 }
 
-input{
+input {
     width: 100%;
     outline: none;
     border: none;
@@ -236,7 +245,8 @@ input{
     border-bottom: 2px solid var(--colorDivisiones);
     transition: 300ms ease border;
 }
-input:focus{
+
+input:focus {
     border-bottom: 2px solid var(--colorSecundario);
     transition: 300ms ease border;
 }
@@ -245,7 +255,7 @@ input:focus{
 ///  Seccion habitaciones  ///
 ////////////////////////////*/
 
-.seccionHabitaciones{
+.seccionHabitaciones {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -253,12 +263,13 @@ input:focus{
     margin-top: 2px;
 }
 
-.habitacion{
+.habitacion {
     border-radius: var(--radioBorde);
     cursor: pointer;
     height: 130px;
     transition: 200ms ease all;
-    background: #fefefe;;
+    background: #fefefe;
+    ;
 }
 
 .labelHabitaciones {
@@ -267,18 +278,19 @@ input:focus{
 
 
 
-.activa{
+.activa {
     background: var(--colorPrincipal);
     color: var(--colorLetraPrincipal);
 }
 
-.labelActiva{
+.labelActiva {
     color: #fafafa;
 }
 
-.inputCorrecto{
+.inputCorrecto {
     border-bottom: 2px solid var(--colorVerdeCorrecto);
 }
+
 .inputIncorrecto {
     border-bottom: 2px solid var(--colorRojoIncorrecto);
 }
@@ -328,6 +340,64 @@ input:focus{
     background: var(--colorSecundarioHover);
 }
 
-.sombra{
+.sombra {
     box-shadow: 2px 2px 2px rgba(0, 0, 0, .25);
+}
+
+/*//////////////////////////////////////
+///   Seccion detalles-reservacion   ///
+////////////////////////////////////////*/
+
+.Titulo--detalles-reservacion {
+    font-size: 2rem;
+    padding-bottom: 5%;
+    letter-spacing: 2px;
+}
+
+.hr--detalles-reservacion {
+    color: #757575;
+}
+
+.cont {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.datos {
+    width: 80%;
+    padding-bottom: 10%;
+    bottom: 50%;
+    right: 50%;
+}
+
+.dato {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20%;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.negritas {
+    font-weight: bold;
+}
+
+.boton-atras {
+    border-radius: 4px;
+    width: 100%;
+    margin-top: 100px;
+    padding: 2% 0;
+    text-align: center;
+    text-decoration: none;
+    background-color: #03A9F4;
+    color: #fff;
+    transition: all 250ms;
+    display: inline-block;
+}
+
+.boton-atras:hover {
+    background-color: #29b5f6;
 }
