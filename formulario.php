@@ -13,7 +13,7 @@
         //$room = $_POST['habitacion'];
 
         //Inserción de datos
-        $consultaEnviarDatos = "INSERT INTO user VALUES (NULL, '$name', '$email', '$phone', $guestsNum, NOW(), $hours, $room);";
+        $consultaEnviarDatos = "INSERT INTO user VALUES (NULL, '$name', '$email', '$phone', NOW(), $hours, $guestsNum, 1);";
         $enviarDatos = $conexion->query($consultaEnviarDatos);
         
         //Comprobacion de query
@@ -98,11 +98,11 @@
                         </div>
                         <div id="habitacionSuite" class="habitacion sombra">
                             <img name="habitacion" value="2" class="imgHabitacion" id="suite" src="Images/Habitacion_Suite.jfif" alt="Suite" draggable="false">
-                            <label class="labelHabitacion" for="suite">Suite</label>
+                            <label class="labelHabitacion" for="suite">Jacuzzi</label>
                         </div>
                         <div id="habitacionPresidencial" class="habitacion sombra">
                             <img name="habitacion" value="3" class="imgHabitacion" id="presidencial" src="Images/Habitacion_Presidencial.jfif" alt="Habitación presidencial" draggable="false">
-                            <label class="labelHabitacion" for="presidencial">Presidencial</label>
+                            <label class="labelHabitacion" for="presidencial">Deluxe</label>
                         </div>
                     </div>      
 

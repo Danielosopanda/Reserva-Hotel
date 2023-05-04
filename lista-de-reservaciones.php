@@ -1,7 +1,7 @@
 <?php 
     require_once "conexion.php";
 
-    $queryReservaciones = "SELECT idUser, nameUser, phoneUser, roomTypeUser FROM USER";
+    $queryReservaciones = "SELECT idUser, nameUser, phoneUser, roomTypeUser FROM USER ORDER BY checkInDateUser DESC;";
     $reservaciones = $conexion->query($queryReservaciones);
 
 ?>
@@ -20,13 +20,32 @@
 <body>
     <div class="container">
         <div class="main sombra">
+            <div class="fila-reservacion">
+                <p class="fila-reservacion__columna fila-reservacion__columna--left fila-reservacion__columna--bold">Nombre del huésped</p>
+                <p class="fila-reservacion__columna fila-reservacion__columna--bold">Número de teléfono</p>
+                <p class="fila-reservacion__columna fila-reservacion__columna--bold">Tipo de habitación</p>
+                <p class="fila-reservacion__columna fila-reservacion__columna--bold"></p>
+            </div>
             <?php 
                 while ($reservacionActual = $reservaciones->fetch_object()) {
             ?>
-                <p><?php echo $reservacionActual->nameUser;?><p>
-                <p><?php echo $reservacionActual->phoneUser;?><p>
-                <p><?php echo $reservacionActual->roomTypeUser;?><p>
-                <a href="detalles-reservacion.php?idUser=<?php echo $reservacionActual->idUser; ?>">Detalle de reservación</a>
+                <div class="fila-reservacion">
+                    <p class="fila-reservacion__columna fila-reservacion__columna--left"><?php echo $reservacionActual->nameUser;?></p>
+                    <p class="fila-reservacion__columna"><?php echo $reservacionActual->phoneUser;?></p>
+                    <p class="fila-reservacion__columna">
+                        <?php
+                            if ($reservacionActual->roomTypeUser == 1) {
+                                echo "Estándar";
+                            } elseif ($reservacionActual->roomTypeUser == 2) {
+                                echo "Jacuzzi";
+                                
+                            } elseif ($reservacionActual->roomTypeUser == 3) {
+                                echo "Deluxe";
+                            }
+                        ?>
+                    </p>
+                    <a class="fila-reservacion__columna fila-reservacion__btn sombra" href="detalles-reservacion.php?idUser=<?php echo $reservacionActual->idUser; ?>">Detalles</a>
+                </div>
             <?php 
                 }
             ?>
