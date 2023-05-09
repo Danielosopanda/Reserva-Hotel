@@ -29,7 +29,8 @@ $conexion->close();
             while ($reservacionEspecifica = $reservacionesDetalles->fetch_object()) {
                 $CheckIn = $reservacionEspecifica->checkInDateUser;
                 $hours = $reservacionEspecifica->hoursUser;
-                $checkOut = date('Y-m-d H:i:s', strtotime($CheckIn . ' + ' . $hours . ' hours'));
+                $checkOut = date('d-m-Y H:i', strtotime($CheckIn . ' + ' . $hours . ' hours'));
+                $CheckIn = date('d-m-Y H:i', strtotime($CheckIn));
             ?>
                     
                     <div class="cont">
@@ -52,7 +53,7 @@ $conexion->close();
                         <hr class="hr--detalles-reservacion">
                         <div class="dato">
                             <p class="negritas">Check In</p>
-                            <p><?php echo $reservacionEspecifica->checkInDateUser; ?></p>
+                            <p><?php echo $CheckIn; ?></p>
                         </div>
                         <hr class="hr--detalles-reservacion">
                         <div class="dato">
