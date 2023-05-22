@@ -18,6 +18,7 @@
     <title>Registro de usuarios</title>
 </head>
 <body>
+    <a  class="btn--navegacion sombra" href="formulario.php">Formulario</a>
     <div class="container">
         <div class="main sombra">
             <div class="fila-reservacion">

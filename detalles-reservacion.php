@@ -1,10 +1,10 @@
 <?php
 require_once "conexion.php";
 
-    $idValue = $_GET['idUser'];
-        
-    $consultaDatos = "SELECT * FROM user WHERE idUser=$idValue;";
-    $reservacionesDetalles = $conexion->query($consultaDatos);
+$idValue = $_GET['idUser'];
+
+$consultaDatos = "SELECT * FROM user WHERE idUser=$idValue;";
+$reservacionesDetalles = $conexion->query($consultaDatos);
 
 $conexion->close();
 ?>
@@ -29,11 +29,9 @@ $conexion->close();
             while ($reservacionEspecifica = $reservacionesDetalles->fetch_object()) {
                 $CheckIn = $reservacionEspecifica->checkInDateUser;
                 $hours = $reservacionEspecifica->hoursUser;
-                $checkOut = date('d-m-Y H:i', strtotime($CheckIn . ' + ' . $hours . ' hours'));
-                $CheckIn = date('d-m-Y H:i', strtotime($CheckIn));
+                $checkOut = date('Y-m-d H:i:s', strtotime($CheckIn . ' + ' . $hours . ' hours'));
             ?>
-                    
-                    <div class="cont">
+                <div class="cont">
                     <h1 class="Titulo--detalles-reservacion">Detalles de la Reservación</h1>
                     <div class="datos">
                         <div class="dato">
@@ -53,7 +51,7 @@ $conexion->close();
                         <hr class="hr--detalles-reservacion">
                         <div class="dato">
                             <p class="negritas">Check In</p>
-                            <p><?php echo $CheckIn; ?></p>
+                            <p><?php echo $reservacionEspecifica->checkInDateUser; ?></p>
                         </div>
                         <hr class="hr--detalles-reservacion">
                         <div class="dato">
@@ -62,25 +60,16 @@ $conexion->close();
                         </div>
                         <hr class="hr--detalles-reservacion">
                         <div class="dato">
-                            <P class="negritas">Número de huéspedes</P>
+                            <P class="negritas">Número de huespedes</P>
                             <p><?php echo $reservacionEspecifica->guestsNumUser; ?></p>
                         </div>
                         <hr class="hr--detalles-reservacion">
                         <div class="dato">
                             <P class="negritas">Tipo de habitación</P>
-                            <p><?php 
-                                if ($reservacionEspecifica->roomTypeUser == 1) {
-                                    echo "Estándar";
-                                } elseif ($reservacionEspecifica->roomTypeUser == 2) {
-                                    echo "Jacuzzi";
-                                    
-                                } elseif ($reservacionEspecifica->roomTypeUser == 3) {
-                                    echo "Deluxe";
-                                }
-                            ?></p>
+                            <p><?php echo $reservacionEspecifica->roomTypeUser; ?></p>
                         </div>
                         <hr class="hr--detalles-reservacion">
-                        <a class="boton-atras sombra" href="lista-de-reservaciones.php">Atrás</a>
+                        <a class="boton-atras" href="lista-de-reservaciones.php">Atrás</a>
                     </div>
                 </div>
             <?php
