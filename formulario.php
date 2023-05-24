@@ -42,6 +42,7 @@
     <title>Registro de usuarios</title>
 </head>
 <body>
+    <a  class="btn--navegacion sombra" href="lista-de-reservaciones.php">Lista de reservaciones</a>  
     <div class="container">
         <div class="main sombra">
             <div class="header seccion">
@@ -81,12 +82,14 @@
                         </div>
                         <div class="campo campo--select">
                             <label class="labelCampo" for="horasDeHospedaje">Horas de hospedaje</label>
-                            <select class="select" name="horasDeHospedaje" id="horasDeHospedaje">
-                                <option value="4" class="option">4</option>
-                                <option value="6" class="option">6</option>
-                                <option value="8" class="option">8</option>
-                                <option value="12" class="option">12</option>
-                            </select>
+                            <div class="custom-select">
+                                <select class="select input" name="horasDeHospedaje" id="horasDeHospedaje">
+                                    <option value="4" class="option">4</option>
+                                    <option value="6" class="option">6</option>
+                                    <option value="8" class="option">8</option>
+                                    <option value="12" class="option">12</option>
+                                </select>
+                            </div>
                         </div> 
                     </div>
     

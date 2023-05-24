@@ -1,10 +1,10 @@
 <?php
 require_once "conexion.php";
 
-    $idValue = $_GET['idUser'];
-        
-    $consultaDatos = "SELECT * FROM user WHERE idUser=$idValue;";
-    $reservacionesDetalles = $conexion->query($consultaDatos);
+$idValue = $_GET['idUser'];
+
+$consultaDatos = "SELECT * FROM user WHERE idUser=$idValue;";
+$reservacionesDetalles = $conexion->query($consultaDatos);
 
 $conexion->close();
 ?>
@@ -31,8 +31,7 @@ $conexion->close();
                 $hours = $reservacionEspecifica->hoursUser;
                 $checkOut = date('Y-m-d H:i:s', strtotime($CheckIn . ' + ' . $hours . ' hours'));
             ?>
-                    
-                    <div class="cont">
+                <div class="cont">
                     <h1 class="Titulo--detalles-reservacion">Detalles de la Reservación</h1>
                     <div class="datos">
                         <div class="dato">
@@ -79,7 +78,7 @@ $conexion->close();
                             ?></p>
                         </div>
                         <hr class="hr--detalles-reservacion">
-                        <a class="boton-atras sombra" href="lista-de-reservaciones.php">Atrás</a>
+                        <a class="boton-atras" href="lista-de-reservaciones.php">Atrás</a>
                     </div>
                 </div>
             <?php
