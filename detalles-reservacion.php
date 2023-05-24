@@ -46,27 +46,27 @@ $conexion->close();
                         </div>
                         <hr class="hr--detalles-reservacion">
                         <div class="dato">
-                            <p class="negritas">Teléfono</p>
+                            <p class="negritas">Teléfono:</p>
                             <p><?php echo $reservacionEspecifica->phoneUser; ?></p>
                         </div>
                         <hr class="hr--detalles-reservacion">
                         <div class="dato">
-                            <p class="negritas">Check In</p>
+                            <p class="negritas">Check In:</p>
                             <p><?php echo $reservacionEspecifica->checkInDateUser; ?></p>
                         </div>
                         <hr class="hr--detalles-reservacion">
                         <div class="dato">
-                            <p class="negritas">Check Out</p>
+                            <p class="negritas">Check Out:</p>
                             <p><?php echo $checkOut; ?></p>
                         </div>
                         <hr class="hr--detalles-reservacion">
                         <div class="dato">
-                            <P class="negritas">Número de huéspedes</P>
+                            <P class="negritas">Número de huéspedes:</P>
                             <p><?php echo $reservacionEspecifica->guestsNumUser; ?></p>
                         </div>
                         <hr class="hr--detalles-reservacion">
                         <div class="dato">
-                            <P class="negritas">Tipo de habitación</P>
+                            <P class="negritas">Tipo de habitación:</P>
                             <p><?php 
                                 if ($reservacionEspecifica->roomTypeUser == 1) {
                                     echo "Estándar";
