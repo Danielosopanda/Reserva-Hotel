@@ -46,10 +46,10 @@
     <div class="container">
         <div class="main sombra">
             <div class="header seccion">
-                <img class="logoHotel sombra" src="Images/Logo.png" alt="Logo Hotel" draggable="false">
+                <img class="logoHotel sombra" src="Images/Logo_2.png" alt="Logo Hotel" draggable="false">
                 <div class="seccionTitulo">
                     <h1>Motel Dos Esferas</h1>
-                    <h2>Eslogan</h2>
+                   <!--  <h2>Eslogan</h2> -->
                 </div>
                 
             </div>
@@ -100,11 +100,11 @@
                             <label class="labelHabitacion" for="estandar">Estándar</label>
                         </div>
                         <div id="habitacionSuite" class="habitacion sombra">
-                            <img name="habitacion" value="2" class="imgHabitacion" id="suite" src="Images/Habitacion_Suite.jfif" alt="Suite" draggable="false">
+                            <img name="habitacion" value="2" class="imgHabitacion" id="suite" src="Images/Habitacion_Jacuzzi.jpg" alt="Suite" draggable="false">
                             <label class="labelHabitacion" for="suite">Jacuzzi</label>
                         </div>
                         <div id="habitacionPresidencial" class="habitacion sombra">
-                            <img name="habitacion" value="3" class="imgHabitacion" id="presidencial" src="Images/Habitacion_Presidencial.jfif" alt="Habitación presidencial" draggable="false">
+                            <img name="habitacion" value="3" class="imgHabitacion" id="presidencial" src="Images/Habitacion_Suite.jfif" alt="Habitación presidencial" draggable="false">
                             <label class="labelHabitacion" for="presidencial">Deluxe</label>
                         </div>
                     </div>      

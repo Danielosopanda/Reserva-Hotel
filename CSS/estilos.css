@@ -100,6 +100,10 @@ body::after {
 .header .logoHotel {
     width: calc(25%/2);
     margin-right: 10px;
+    padding: 12px;
+    border-radius: 16px;
+    background: #FFF;
+    border: 3px solid black;
 }
 
 .main {
@@ -416,14 +420,14 @@ input:focus {
 }
 
 /*////////////////////////////
-///   Boton de navegacion  ///
+///   Botón de navegacion  ///
 ////////////////////////////*/
 
 .btn--navegacion{
     background-color: #03A9F4;
     color:#fff;
     display: inline-block;
-    position:absolute;
+    position: absolute;
     border-radius: 4px;
     padding: 6px;
     right:10px;
