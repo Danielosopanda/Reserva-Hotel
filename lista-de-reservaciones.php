@@ -20,7 +20,7 @@
 <body>
     <a  class="btn--navegacion sombra" href="formulario.php">Formulario</a>
     <div class="container">
-        <div class="main sombra">
+        <div class="main main--lista-de-reservaciones sombra">
             <div class="fila-reservacion">
                 <p class="fila-reservacion__columna fila-reservacion__columna--left fila-reservacion__columna--bold">Nombre del huésped</p>
                 <p class="fila-reservacion__columna fila-reservacion__columna--bold">Número de teléfono</p>

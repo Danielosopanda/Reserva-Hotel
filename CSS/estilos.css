@@ -115,6 +115,10 @@ body::after {
     border-radius: var(--radioBorde);
 }
 
+.main--lista-de-reservaciones {
+    overflow-y: scroll;
+}
+
 
 
 .seccion {
@@ -439,4 +443,39 @@ input:focus {
 
 .btn--navegacion:hover {
     background-color: #29b5f6;
+}
+
+.fila-reservacion {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 4fr 3fr 3fr 3fr;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+}
+
+.fila-reservacion__columna {
+    text-align: center;
+    font-size: 15px;
+}
+
+.fila-reservacion__columna--bold {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.fila-reservacion__columna--left {
+    text-align: left;
+}
+
+.fila-reservacion__btn {
+    background: var(--colorSecundario);
+    transition: 300ms ease background;
+    text-decoration: none;
+    color: #FFF;
+    padding: 4px 0;
+    border-radius: 2px;
+}
+
+.fila-reservacion__btn:hover {
+    background: var(--colorSecundarioHover);
 }
